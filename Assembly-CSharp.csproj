@@ -58,6 +58,7 @@
     <Compile Include="Assets\TestBild.cs" />
     <Compile Include="Assets\UIPage.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

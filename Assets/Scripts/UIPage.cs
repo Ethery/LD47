@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class UIPage : MonoBehaviour
 {
-	public static Dictionary<EPage,List<UIPage>> PagesRefs
+	public static Dictionary<EPage, List<UIPage>> PagesRefs
 	{
 		get;
 		protected set;
-	}
+	} = new Dictionary<EPage, List<UIPage>>();
 
 	public enum EPage
 	{
@@ -43,6 +43,7 @@ public class UIPage : MonoBehaviour
 		if (PagesRefs[Page].Count <= 0)
 			PagesRefs.Remove(Page);
 	}
+
 	public static void Show(EPage aPage, bool aShow)
 	{
 		foreach(UIPage page in PagesRefs[aPage])

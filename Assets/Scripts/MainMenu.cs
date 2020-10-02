@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public void StartGame()
+	{
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
+
+	public void StartCredits()
+	{
+		UIPage.Show(UIPage.EPage.Credits, true);
+	}
+
+	public void ExitGame()
+	{
+		Application.Quit();
+#if UNITY_EDITOR
+		EditorApplication.isPlaying = false;
+#endif
+	}
+
 }

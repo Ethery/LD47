@@ -55,10 +55,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\TestBild.cs" />
-    <Compile Include="Assets\UIPage.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\UIPage.cs" />
+    <Compile Include="Assets\Scripts\TestBild.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

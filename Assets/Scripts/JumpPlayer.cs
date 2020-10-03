@@ -2,17 +2,19 @@
 
 public class JumpPlayer : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float forceSaut = 20;
+	public Rigidbody2D rb;
+	public float forceSaut = 20;
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	private void Update()
+	{
+		if (Input.GetKeyDown("z"))
+		{
+			Debug.Log("Saut");
+			rb.AddForce(new Vector2(0, forceSaut), ForceMode2D.Impulse);
+		}
+	}
 
-        if (Input.GetKeyDown("z"))
-        {
-            Debug.Log("Saut");
-            rb.AddForce(new Vector2(0, forceSaut), ForceMode2D.Impulse);    
-        }   
-    }
+	public void TakeDamage()
+	{ }
 }

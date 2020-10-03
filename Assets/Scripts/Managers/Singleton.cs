@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
-
 
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
@@ -8,6 +6,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 	public static bool IsInstanced { get { return s_instance != null; } }
 
 	private static T s_instance = null;
+
 	#region Private
 
 	protected virtual void Awake()

@@ -1,24 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UIPage : MonoBehaviour
 {
-
 	public enum EState
 	{
 		Shown,
 		Hidden
 	}
 
-	public UIManager.EPage Page;
-	public EState CurrentState
-	{
-		get;
-		private set;
-	}
+	public UIManager.EPageType PageType;
+
+	[SerializeField]
+	private EState m_CurrentState;
+
+	public EState CurrentState => m_CurrentState;
+
+	public GameObject Content;
+
 	private void Awake()
 	{
 		UIManager.RegisterPage(this);
@@ -31,7 +29,7 @@ public class UIPage : MonoBehaviour
 
 	public void Show(bool aShow)
 	{
-		CurrentState = aShow ? EState.Shown : EState.Hidden;
-		gameObject.SetActive(aShow);
+		m_CurrentState = aShow ? EState.Shown : EState.Hidden;
+		Content.SetActive(aShow);
 	}
 }

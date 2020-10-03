@@ -1,44 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : Singleton<UIManager>
 {
-	public enum EPage
+	public enum EPageType
 	{
 		MainMenu,
 		Credits
 	}
 
-	public static Dictionary<EPage, List<UIPage>> PagesRefs
+	public static Dictionary<EPageType, List<UIPage>> PagesRefs
 	{
 		get;
 		protected set;
-	} = new Dictionary<EPage, List<UIPage>>();
-
+	} = new Dictionary<EPageType, List<UIPage>>();
 
 	public static void RegisterPage(UIPage page)
 	{
-		if (!PagesRefs.ContainsKey(page.Page))
-			PagesRefs.Add(page.Page, new List<UIPage>());
-		PagesRefs[page.Page].Add(page);
+		if (!PagesRefs.ContainsKey(page.PageType))
+			PagesRefs.Add(page.PageType, new List<UIPage>());
+		PagesRefs[page.PageType].Add(page);
+
+		Debug.Log("Registered " + page.name + " as " + page.PageType);
 	}
+
 	public static void UnregisterPage(UIPage page)
 	{
-		PagesRefs[page.Page].Remove(page);
-		if (PagesRefs[page.Page].Count <= 0)
-			PagesRefs.Remove(page.Page);
+		PagesRefs[page.PageType].Remove(page);
+		if (PagesRefs[page.PageType].Count <= 0)
+			PagesRefs.Remove(page.PageType);
+		Debug.Log("Unregistered " + page.name + " from " + page.PageType);
 	}
 
-
-	public static void Show(EPage aPage, bool aShow)
+	public static void Show(EPageType aPage, bool aShow)
 	{
-		foreach (UIPage page in PagesRefs[aPage])
+		if (PagesRefs.ContainsKey(aPage))
 		{
-			if (page.CurrentState == (aShow ? UIPage.EState.Hidden : UIPage.EState.Shown))
+			foreach (UIPage page in PagesRefs[aPage])
 			{
-				page.Show(aShow);
+				if (page.CurrentState == (aShow ? UIPage.EState.Hidden : UIPage.EState.Shown))
+				{
+					page.Show(aShow);
+				}
 			}
+		}
+		else
+		{
+			Debug.LogError("There is no " + aPage + " registered in UI Manager. Make sure it is registering itself.");
 		}
 	}
 }

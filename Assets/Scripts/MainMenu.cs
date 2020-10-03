@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : UIPage
 {
 	public void StartGame()
 	{
 		SceneManager.LoadScene("Level1");
+		UIManager.Show(UIManager.EPageType.MainMenu, false);
 	}
 
 	public void StartCredits()
 	{
-		UIManager.Show(UIManager.EPage.Credits, true);
+		UIManager.Show(UIManager.EPageType.Credits, true);
 	}
 
 	public void ExitGame()
@@ -23,5 +22,4 @@ public class MainMenu : MonoBehaviour
 		EditorApplication.isPlaying = false;
 #endif
 	}
-
 }

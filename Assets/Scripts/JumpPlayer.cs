@@ -5,37 +5,42 @@ public class JumpPlayer : MonoBehaviour
 {
 	private Rigidbody2D rb;
 	public float forceSaut = 5;
-	public float MoveSpeed = 0.2f;
+	public float MoveSpeed = 5f;
+    public float runMultiplicator = 2;
 
-	public bool IsGrounded { get; private set; }
+    public bool IsGrounded { get; private set; }
 
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-	}
+        
+    }
 
 	// Update is called once per frame
 	private void Update()
 	{
+        
 		if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
 		{
-			Debug.Log("Saut");
 			IsGrounded = false;
 			rb.AddForce(transform.up * forceSaut, ForceMode2D.Impulse);
 		}
-
 		Vector3 ZeroRotVelocity = transform.InverseTransformVector(new Vector3(rb.velocity.x, rb.velocity.y, 0));
-		ZeroRotVelocity.x = 0;
-		if (Input.GetKey(KeyCode.D))
+        ZeroRotVelocity.x = 0;
+        if (Input.GetKey(KeyCode.D))
 		{
 			ZeroRotVelocity.x = MoveSpeed;
 		}
-		else if (Input.GetKey(KeyCode.Q))
+		if (Input.GetKey(KeyCode.Q))
 		{
 			ZeroRotVelocity.x = -MoveSpeed;
 		}
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            ZeroRotVelocity.x *= runMultiplicator;
+        }
 		rb.velocity = transform.TransformVector(ZeroRotVelocity);
-
+        Debug.Log(rb.velocity);
 		Vector3 CenterOfPlanet = Vector3.zero;
 		Vector3 downDirection = (CenterOfPlanet - transform.position).normalized;
 

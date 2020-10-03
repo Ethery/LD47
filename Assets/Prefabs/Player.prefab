@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceSaut: 5
   MoveSpeed: 5
+  runMultiplicator: 2
 --- !u!61 &6327231266132813480
 BoxCollider2D:
   m_ObjectHideFlags: 0

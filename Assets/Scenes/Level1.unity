@@ -222,57 +222,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 725247815, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 725247815, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917295156956693220, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917295156956693220, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.24
-      objectReference: {fileID: 0}
     - target: {fileID: 2917295156956693240, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
       propertyPath: m_Name
       value: Planet
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917295156956693242, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f98b52ac14d23f341bc90df1f7d1f302, type: 3}
-    - target: {fileID: 2917295156956693242, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917295156956693242, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1198162745
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917295156956693242, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917295156956693242, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d86568e2a9261574ebd7f4d20d19fb85, type: 2}
-    - target: {fileID: 2917295156956693242, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_Size.x
-      value: 320
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917295156956693242, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_Size.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917295156956693242, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2917295156956693243, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -327,34 +279,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1891612523, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1891612523, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1891612523, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1891612523, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1891612523, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: far clip plane
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1891612524, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1891612524, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
     - target: {fileID: 6327231266132813485, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

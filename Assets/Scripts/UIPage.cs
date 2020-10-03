@@ -6,17 +6,6 @@ using UnityEngine;
 
 public class UIPage : MonoBehaviour
 {
-	public static Dictionary<EPage, List<UIPage>> PagesRefs
-	{
-		get;
-		protected set;
-	} = new Dictionary<EPage, List<UIPage>>();
-
-	public enum EPage
-	{
-		MainMenu,
-		Credits
-	}
 
 	public enum EState
 	{
@@ -24,7 +13,7 @@ public class UIPage : MonoBehaviour
 		Hidden
 	}
 
-	public EPage Page;
+	public UIManager.EPage Page;
 	public EState CurrentState
 	{
 		get;
@@ -32,27 +21,12 @@ public class UIPage : MonoBehaviour
 	}
 	private void Awake()
 	{
-		if (!PagesRefs.ContainsKey(Page))
-			PagesRefs.Add(Page, new List<UIPage>());
-		PagesRefs[Page].Add(this);
+		UIManager.RegisterPage(this);
 	}
 
 	private void OnDestroy()
 	{
-		PagesRefs[Page].Remove(this);
-		if (PagesRefs[Page].Count <= 0)
-			PagesRefs.Remove(Page);
-	}
-
-	public static void Show(EPage aPage, bool aShow)
-	{
-		foreach(UIPage page in PagesRefs[aPage])
-		{
-			if(page.CurrentState == (aShow ? EState.Hidden:EState.Shown))
-			{
-				page.Show(aShow);
-			}
-		}
+		UIManager.UnregisterPage(this);
 	}
 
 	public void Show(bool aShow)

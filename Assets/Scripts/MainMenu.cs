@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
 	public void StartGame()
 	{
-
+		SceneManager.LoadScene("Level1");
 	}
 
 	public void StartCredits()
 	{
-		UIPage.Show(UIPage.EPage.Credits, true);
+		UIManager.Show(UIManager.EPage.Credits, true);
 	}
 
 	public void ExitGame()

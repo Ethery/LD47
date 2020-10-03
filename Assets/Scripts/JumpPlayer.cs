@@ -10,7 +10,12 @@ public class JumpPlayer : MonoBehaviour
 
 	public bool IsGrounded { get; private set; }
 
-	private void Start()
+    private void Awake()
+    {
+        GameManager.Player = this;
+    }
+
+    private void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
@@ -67,6 +72,14 @@ public class JumpPlayer : MonoBehaviour
 
 	public void TakeDamage()
 	{
-		Debug.Log("Prend des dommages");
+		Debug.Log("Cest la muerte !");
 	}
+
+    private void OnDestroy()
+    {
+        if(GameManager.Player == this)
+        {
+            GameManager.Player = null;
+        }
+    }
 }

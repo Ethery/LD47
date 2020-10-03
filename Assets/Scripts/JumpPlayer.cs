@@ -30,7 +30,7 @@ public class JumpPlayer : MonoBehaviour
 		{
 			ZeroRotVelocity.x = MoveSpeed;
 		}
-		else if (Input.GetKey(KeyCode.Q))
+		if (Input.GetKey(KeyCode.Q))
 		{
 			ZeroRotVelocity.x = -MoveSpeed;
 		}

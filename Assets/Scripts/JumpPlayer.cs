@@ -10,12 +10,12 @@ public class JumpPlayer : MonoBehaviour
 
 	public bool IsGrounded { get; private set; }
 
-    private void Awake()
-    {
-        GameManager.Player = this;
-    }
+	private void Awake()
+	{
+		GameManager.Player = this;
+	}
 
-    private void Start()
+	private void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
@@ -50,7 +50,7 @@ public class JumpPlayer : MonoBehaviour
 		Vector3 CenterOfPlanet = Vector3.zero;
 		Vector3 downDirection = (CenterOfPlanet - transform.position).normalized;
 
-		transform.up = -downDirection;
+		transform.rotation = Quaternion.LookRotation(Vector3.forward, -downDirection);
 		Physics2D.gravity = downDirection * 9.81f;
 	}
 
@@ -73,13 +73,14 @@ public class JumpPlayer : MonoBehaviour
 	public void TakeDamage()
 	{
 		Debug.Log("Cest la muerte !");
+		UIManager.Show(UIManager.EPageType.DeathScreen, true);
 	}
 
-    private void OnDestroy()
-    {
-        if(GameManager.Player == this)
-        {
-            GameManager.Player = null;
-        }
-    }
+	private void OnDestroy()
+	{
+		if (GameManager.Player == this)
+		{
+			GameManager.Player = null;
+		}
+	}
 }

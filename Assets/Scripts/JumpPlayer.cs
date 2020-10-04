@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider), typeof(Animator))]
 public class JumpPlayer : MonoBehaviour
 {
 	private Rigidbody2D rb;
+	private Animator anim;
 	public float forceSaut = 5;
 	public float MoveSpeed = 5f;
 	public float runMultiplicator = 2;
@@ -18,6 +19,7 @@ public class JumpPlayer : MonoBehaviour
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -45,6 +47,8 @@ public class JumpPlayer : MonoBehaviour
 		{
 			ZeroRotVelocity.x *= runMultiplicator;
 		}
+		anim.SetFloat("HorizontalSpeed", ZeroRotVelocity.x);
+		anim.SetFloat("VerticalSpeed", ZeroRotVelocity.y);
 		rb.velocity = transform.TransformVector(ZeroRotVelocity);
 
 		Vector3 CenterOfPlanet = Vector3.zero;
@@ -54,7 +58,7 @@ public class JumpPlayer : MonoBehaviour
 		Physics2D.gravity = downDirection * 9.81f;
 	}
 
-	private void OnCollisionStay2D(Collision2D collision)
+	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Ground")
 		{
@@ -62,7 +66,7 @@ public class JumpPlayer : MonoBehaviour
 		}
 	}
 
-	private void OnCollisionExit2D(Collision2D collision)
+	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Ground")
 		{

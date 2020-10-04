@@ -8,5 +8,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		SceneManager.LoadScene("MainMenu");
 		UIManager.Show(UIManager.EPageType.MainMenu, true);
-	}
+        UIManager.Show(UIManager.EPageType.DeathScreen, false);
+        UIManager.Show(UIManager.EPageType.WinScreen, false);
+    }
 }

@@ -40,10 +40,7 @@ public class UIManager : Singleton<UIManager>
 		{
 			foreach (UIPage page in PagesRefs[aPage])
 			{
-				if (page.CurrentState == (aShow ? UIPage.EState.Hidden : UIPage.EState.Shown))
-				{
-					page.Show(aShow);
-				}
+				page.Show(aShow);
 			}
 		}
 		else

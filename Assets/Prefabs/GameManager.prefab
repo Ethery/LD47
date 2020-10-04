@@ -179,6 +179,30 @@ PrefabInstance:
       propertyPath: m_Text
       value: Credits
       objectReference: {fileID: 0}
+    - target: {fileID: 4016732270376877751, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016732270376877751, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016732270376877751, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016732270376877751, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016732270376877751, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016732270376877751, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4016732270376877752, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -215,6 +239,30 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4057630998675155635, guid: 82259371d5114934b90261aff6691960, type: 3}
+    - target: {fileID: 7157933240144284374, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157933240144284374, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157933240144284374, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157933240144284374, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157933240144284374, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157933240144284374, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7157933240144284377, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -246,6 +294,22 @@ PrefabInstance:
     - target: {fileID: 7157933241787344367, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
       propertyPath: m_Text
       value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827783180843655070, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4287369128884465088}
+    - target: {fileID: 7827783180843655070, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827783180843655070, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827783180843655070, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9094128589788535124, guid: afa9558ddfae3be4aa071eaa69ad0c85, type: 3}
       propertyPath: m_AnchorMin.y

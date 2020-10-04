@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5976582631506883293}
   - component: {fileID: 4213471639461915971}
   - component: {fileID: 576866787334415859}
+  - component: {fileID: 3622006353002829607}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -121,6 +122,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3622006353002829607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827961093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e6682d613926a47be7bd1a7b68d781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2038029086585814376
 GameObject:
   m_ObjectHideFlags: 0

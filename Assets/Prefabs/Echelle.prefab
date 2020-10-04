@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2194598019105535204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2194598019175661390}
@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.015906334, y: -0.031816483}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 12.358959, y: 1.9545326}
   m_EdgeRadius: 0
 --- !u!1 &2194598019175661379
 GameObject:
@@ -85,14 +85,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2194598019175661379}
-  m_LocalRotation: {x: 0, y: 0, z: 0.040328734, w: 0.99918646}
+  m_LocalRotation: {x: 0, y: 0, z: 0.04033236, w: 0.9991864}
   m_LocalPosition: {x: 4.22, y: 56.23, z: 0}
-  m_LocalScale: {x: 1.4298377, y: 8.355026, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2194598019105535207}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.623}
 --- !u!212 &2194598019175661391
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6f483712462aaaf4fb7cbbdbf34f79ca, type: 3}
+  m_Sprite: {fileID: -5496895882290543554, guid: 881be4cf42d0a2149a1f9f4c643e76a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,18 +169,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.015912056, y: -0.03498268}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 12.457143, y: 2.0285714}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 12.295322, y: 1.9482002}
   m_EdgeRadius: 0
 --- !u!50 &2194598019175661378
 Rigidbody2D:
@@ -217,3 +217,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
+  isPlaced: 0

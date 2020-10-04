@@ -9,6 +9,7 @@ public class UIManager : Singleton<UIManager>
 		Credits,
 		DeathScreen,
 		WinScreen,
+		TutoPopup,
 	}
 
 	public static Dictionary<EPageType, List<UIPage>> PagesRefs
@@ -34,21 +35,20 @@ public class UIManager : Singleton<UIManager>
 		Debug.Log("Unregistered " + page.name + " from " + page.PageType);
 	}
 
-	public static void Show(EPageType aPage, bool aShow)
+	public static List<UIPage> Show(EPageType aPage, bool aShow)
 	{
 		if (PagesRefs.ContainsKey(aPage))
 		{
 			foreach (UIPage page in PagesRefs[aPage])
 			{
-				if (page.CurrentState == (aShow ? UIPage.EState.Hidden : UIPage.EState.Shown))
-				{
-					page.Show(aShow);
-				}
+				page.Show(aShow);
 			}
+			return PagesRefs[aPage];
 		}
 		else
 		{
 			Debug.LogError("There is no " + aPage + " registered in UI Manager. Make sure it is registering itself.");
 		}
+		return new List<UIPage>();
 	}
 }

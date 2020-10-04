@@ -222,6 +222,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 93007779, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 746788946, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 817431666, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597530698, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886096580, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2917295156956693240, guid: 1833c7681cc3396458ccb90b3cc4d21f, type: 3}
       propertyPath: m_Name
       value: Planet
@@ -279,21 +299,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1891612523, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: orthographic size
-      value: 9.88
+    - target: {fileID: 301538808333992762, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.38
       objectReference: {fileID: 0}
-    - target: {fileID: 1891612524, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
-      propertyPath: m_LocalPosition.y
+    - target: {fileID: 6327231266132813484, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6327231266132813485, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.26
+      value: -1.49
       objectReference: {fileID: 0}
     - target: {fileID: 6327231266132813485, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 53.25
+      value: 53.753
       objectReference: {fileID: 0}
     - target: {fileID: 6327231266132813485, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -334,6 +354,14 @@ PrefabInstance:
     - target: {fileID: 6327231266132813487, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194298250311625401, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880368882506908830, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3951f3691ad37e34a8fa950ab254f1d2, type: 3}

@@ -8,6 +8,8 @@ public class JumpPlayer : MonoBehaviour
 	public float forceSaut = 5;
 	public float MoveSpeed = 5f;
 	public float runMultiplicator = 2;
+    public bool canPositionEchelle = false;
+    public GameObject Echelle;
 
 	public bool IsGrounded { get; private set; }
 
@@ -37,17 +39,21 @@ public class JumpPlayer : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.D))
 		{
+			GetComponent<SpriteRenderer>().flipX = false;
 			ZeroRotVelocity.x = MoveSpeed;
 		}
 		if (Input.GetKey(KeyCode.Q))
 		{
+			GetComponent<SpriteRenderer>().flipX = true;
 			ZeroRotVelocity.x = -MoveSpeed;
 		}
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
 			ZeroRotVelocity.x *= runMultiplicator;
 		}
-		anim.SetFloat("HorizontalSpeed", ZeroRotVelocity.x);
+		float maxSpeed = MoveSpeed * runMultiplicator;
+		float lerpedSpeed = (Mathf.InverseLerp(-maxSpeed, maxSpeed, ZeroRotVelocity.x) * 2) - 1;
+		anim.SetFloat("HorizontalSpeed", lerpedSpeed);
 		anim.SetFloat("VerticalSpeed", ZeroRotVelocity.y);
 		rb.velocity = transform.TransformVector(ZeroRotVelocity);
 
@@ -56,6 +62,11 @@ public class JumpPlayer : MonoBehaviour
 
 		transform.rotation = Quaternion.LookRotation(Vector3.forward, -downDirection);
 		Physics2D.gravity = downDirection * 9.81f;
+
+        if (canPositionEchelle && Input.GetKeyDown(KeyCode.E))
+        {
+            
+        }
 	}
 
 	private void OnTriggerStay2D(Collider2D collision)

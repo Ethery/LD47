@@ -4,7 +4,9 @@ public class EchelleObject : MonoBehaviour
 {
     public GameObject Player;
     public Vector3 offset = new Vector3(0, 0, 0);
+    public bool isPlaced = false;
     private bool onPlayer = false;
+
 
     private void Update()
     {
@@ -20,9 +22,8 @@ public class EchelleObject : MonoBehaviour
     {
         if(collision.attachedRigidbody.gameObject == Player.gameObject) 
         {
-            if (Input.GetKeyDown(KeyCode.E)){
+            if (Input.GetKeyDown(KeyCode.E) && !GameManager.Player.canPositionEchelle){
                 onPlayer = !onPlayer;
-
             }
         }
     }

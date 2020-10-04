@@ -54,7 +54,7 @@ public class JumpPlayer : MonoBehaviour
 		Physics2D.gravity = downDirection * 9.81f;
 	}
 
-	private void OnCollisionStay2D(Collision2D collision)
+	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Ground")
 		{
@@ -62,7 +62,7 @@ public class JumpPlayer : MonoBehaviour
 		}
 	}
 
-	private void OnCollisionExit2D(Collision2D collision)
+	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Ground")
 		{

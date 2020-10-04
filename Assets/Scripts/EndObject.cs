@@ -8,6 +8,7 @@ public class EndObject : MonoBehaviour
 		{
 			Debug.Log("Fin du niveau !");
 			UIManager.Show(UIManager.EPageType.WinScreen, true);
+			GameManager.Player.CanMove = false;
 		}
 	}
 }

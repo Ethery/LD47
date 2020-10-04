@@ -59,7 +59,7 @@ Camera:
   far clip plane: 60
   field of view: 60
   orthographic: 1
-  orthographic size: 7.1338654
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -368,6 +368,8 @@ MonoBehaviour:
   forceSaut: 5
   MoveSpeed: 20
   runMultiplicator: 1.5
+  canPositionEchelle: 0
+  Echelle: {fileID: 0}
 --- !u!95 &6133066308788045465
 Animator:
   serializedVersion: 3

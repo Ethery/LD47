@@ -13,4 +13,14 @@ public class GameManager : Singleton<GameManager>
 		UIManager.Show(UIManager.EPageType.TutoPopup, false);
 		UIManager.Show(UIManager.EPageType.Credits, false);
 	}
+
+	public void RestartLevel()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		UIManager.Show(UIManager.EPageType.MainMenu, false);
+		UIManager.Show(UIManager.EPageType.DeathScreen, false);
+		UIManager.Show(UIManager.EPageType.WinScreen, false);
+		UIManager.Show(UIManager.EPageType.TutoPopup, false);
+		UIManager.Show(UIManager.EPageType.Credits, false);
+	}
 }

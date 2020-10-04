@@ -8,13 +8,17 @@ public class JumpPlayer : MonoBehaviour
 	public float forceSaut = 5;
 	public float MoveSpeed = 5f;
 	public float runMultiplicator = 2;
-    public bool canPositionEchelle = false;
-    public GameObject Echelle;
+	public bool canPositionEchelle = false;
+	public GameObject Echelle;
+
+	[HideInInspector]
+	public bool CanMove = true;
 
 	public bool IsGrounded { get; private set; }
 
 	private void Awake()
 	{
+		CanMove = true;
 		GameManager.Player = this;
 	}
 
@@ -27,7 +31,7 @@ public class JumpPlayer : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
+		if (Input.GetKeyDown(KeyCode.Space) && IsGrounded && CanMove)
 		{
 			IsGrounded = false;
 			rb.AddForce(transform.up * forceSaut, ForceMode2D.Impulse);
@@ -37,17 +41,17 @@ public class JumpPlayer : MonoBehaviour
 
 		ZeroRotVelocity.x = 0;
 
-		if (Input.GetKey(KeyCode.D))
+		if (Input.GetKey(KeyCode.D) && CanMove)
 		{
 			GetComponent<SpriteRenderer>().flipX = false;
 			ZeroRotVelocity.x = MoveSpeed;
 		}
-		if (Input.GetKey(KeyCode.Q))
+		if (Input.GetKey(KeyCode.Q) && CanMove)
 		{
 			GetComponent<SpriteRenderer>().flipX = true;
 			ZeroRotVelocity.x = -MoveSpeed;
 		}
-		if (Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetKey(KeyCode.LeftShift) && CanMove)
 		{
 			ZeroRotVelocity.x *= runMultiplicator;
 		}
@@ -63,10 +67,9 @@ public class JumpPlayer : MonoBehaviour
 		transform.rotation = Quaternion.LookRotation(Vector3.forward, -downDirection);
 		Physics2D.gravity = downDirection * 9.81f;
 
-        if (canPositionEchelle && Input.GetKeyDown(KeyCode.E))
-        {
-            
-        }
+		if (canPositionEchelle && Input.GetKeyDown(KeyCode.E) && CanMove)
+		{
+		}
 	}
 
 	private void OnTriggerStay2D(Collider2D collision)
@@ -89,6 +92,7 @@ public class JumpPlayer : MonoBehaviour
 	{
 		Debug.Log("Cest la muerte !");
 		UIManager.Show(UIManager.EPageType.DeathScreen, true);
+		CanMove = false;
 	}
 
 	private void OnDestroy()

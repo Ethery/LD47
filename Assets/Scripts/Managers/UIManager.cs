@@ -6,7 +6,8 @@ public class UIManager : Singleton<UIManager>
 	public enum EPageType
 	{
 		MainMenu,
-		Credits
+		Credits,
+		DeathScreen,
 	}
 
 	public static Dictionary<EPageType, List<UIPage>> PagesRefs

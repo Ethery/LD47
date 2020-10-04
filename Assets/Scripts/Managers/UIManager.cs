@@ -8,6 +8,7 @@ public class UIManager : Singleton<UIManager>
 		MainMenu,
 		Credits,
 		DeathScreen,
+		WinScreen,
 	}
 
 	public static Dictionary<EPageType, List<UIPage>> PagesRefs

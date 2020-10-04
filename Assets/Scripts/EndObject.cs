@@ -7,6 +7,7 @@ public class EndObject : MonoBehaviour
         if(collision.gameObject == GameManager.Player.gameObject)
         {
             Debug.Log("Fin du niveau !");
+            UIManager.Show(UIManager.EPageType.WinScreen, true);
         }
     }
 }

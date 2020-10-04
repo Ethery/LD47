@@ -37,17 +37,21 @@ public class JumpPlayer : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.D))
 		{
+			GetComponent<SpriteRenderer>().flipX = false;
 			ZeroRotVelocity.x = MoveSpeed;
 		}
 		if (Input.GetKey(KeyCode.Q))
 		{
+			GetComponent<SpriteRenderer>().flipX = true;
 			ZeroRotVelocity.x = -MoveSpeed;
 		}
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
 			ZeroRotVelocity.x *= runMultiplicator;
 		}
-		anim.SetFloat("HorizontalSpeed", ZeroRotVelocity.x);
+		float maxSpeed = MoveSpeed * runMultiplicator;
+		float lerpedSpeed = (Mathf.InverseLerp(-maxSpeed, maxSpeed, ZeroRotVelocity.x) * 2) - 1;
+		anim.SetFloat("HorizontalSpeed", lerpedSpeed);
 		anim.SetFloat("VerticalSpeed", ZeroRotVelocity.y);
 		rb.velocity = transform.TransformVector(ZeroRotVelocity);
 

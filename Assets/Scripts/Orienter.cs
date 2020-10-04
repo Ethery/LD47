@@ -1,8 +1,15 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
+
+#if UNITY_EDITOR
+
+using UnityEditor;
+
+#endif
 
 public class Orienter : MonoBehaviour
 {
+#if UNITY_EDITOR
+
 	[MenuItem("Tools/Orient Objects")]
 	private static void DoIt()
 	{
@@ -11,6 +18,8 @@ public class Orienter : MonoBehaviour
 			or.Orient();
 		}
 	}
+
+#endif
 
 	public void Orient()
 	{

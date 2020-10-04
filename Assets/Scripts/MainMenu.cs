@@ -8,7 +8,7 @@ public class MainMenu : UIPage
 	{
 		SceneManager.LoadScene("Level1");
 		UIManager.Show(UIManager.EPageType.MainMenu, false);
-		TutoPopup.Show("Your goal is to go to the teleporter on the level.");
+		TutoPopup.Show("Your goal is to go to the teleporter on the level.\n Try go right maybe ? ");
 	}
 
 	public void StartCredits()

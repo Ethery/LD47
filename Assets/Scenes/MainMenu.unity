@@ -415,6 +415,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4993117891561155287, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993117891561155287, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_CancelButton
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993117892478706415, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.199707
+      objectReference: {fileID: 0}
     - target: {fileID: 5151715782747579194, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

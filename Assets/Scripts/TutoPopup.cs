@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using UnityEngine.UI;
+using TMPro;
 
 public class TutoPopup : UIPage
 {
-	public Text TextBox;
+	public TextMeshProUGUI TextBox;
 
 	public static void Show(string TextToShow)
 	{
@@ -14,8 +14,23 @@ public class TutoPopup : UIPage
 		}
 	}
 
-	public void ExitPopup()
+	private void Update()
 	{
-		UIManager.Show(UIManager.EPageType.TutoPopup, false);
+		if (GameManager.Player != null)
+		{
+			if (CurrentState == EState.Shown && GameManager.Player.CanMove)
+			{
+				GameManager.Player.CanMove = false;
+			}
+		}
+	}
+
+	public override void Show(bool aShow)
+	{
+		base.Show(aShow);
+		if (GameManager.Player != null)
+		{
+			GameManager.Player.CanMove = !aShow;
+		}
 	}
 }

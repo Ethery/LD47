@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider), typeof(Animator))]
 public class JumpPlayer : MonoBehaviour
@@ -91,8 +92,15 @@ public class JumpPlayer : MonoBehaviour
 	public void TakeDamage()
 	{
 		Debug.Log("Cest la muerte !");
-		UIManager.Show(UIManager.EPageType.DeathScreen, true);
 		CanMove = false;
+		StartCoroutine(TakeDamageRoutine());
+	}
+
+	public IEnumerator TakeDamageRoutine()
+	{
+		anim.SetTrigger("TakeDamage");
+		yield return new WaitForSeconds(2f);
+		UIManager.Show(UIManager.EPageType.DeathScreen, true);
 	}
 
 	private void OnDestroy()

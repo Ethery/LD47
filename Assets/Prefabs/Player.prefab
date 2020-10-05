@@ -370,6 +370,7 @@ MonoBehaviour:
   runMultiplicator: 1.5
   canPositionEchelle: 0
   Echelle: {fileID: 0}
+  CanMove: 1
 --- !u!95 &6133066308788045465
 Animator:
   serializedVersion: 3

@@ -40,7 +40,7 @@ public class GameManager : Singleton<GameManager>
 	public void NextLevel()
 	{
 		CurrentLevel++;
-		SceneManager.LoadScene("Level" + CurrentLevel);
+		SceneManager.LoadScene("Level" + 5);
 		UIManager.Show(UIManager.EPageType.MainMenu, false);
 		UIManager.Show(UIManager.EPageType.DeathScreen, false);
 		UIManager.Show(UIManager.EPageType.WinScreen, false);

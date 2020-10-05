@@ -10,11 +10,17 @@ public class JumpPlayer : MonoBehaviour
 	public float MoveSpeed = 5f;
 	public float runMultiplicator = 2;
 	public bool canPositionEchelle => Place != null;
+
+	public float ClimbSpeed;
+
+	[HideInInspector]
 	public EchelleObject Echelle;
+	[HideInInspector]
 	public PositionEchelle Place;
 
 	[HideInInspector]
 	public bool CanMove = true;
+	[HideInInspector]
 	public bool ClimbingToLadder;
 
 	public bool IsGrounded { get; private set; }
@@ -35,50 +41,50 @@ public class JumpPlayer : MonoBehaviour
 	private void Update()
 	{
 		UpdateMovements();
-        if(Echelle != null && Echelle.isPlaced)
+		ClimbSpeed = 0;
+		rb.bodyType = RigidbodyType2D.Dynamic;
+		if (Echelle != null && Echelle.IsPlaced)
 		{
 			if (CanMove)
 			{
-                if(Input.GetKey(KeyCode.Z))
-                {
-                    rb.bodyType = RigidbodyType2D.Kinematic;
-                    Vector3 oldPosition = transform.position;
-                    oldPosition.y += 5 * Time.deltaTime;
-                    transform.position = oldPosition;
-                }
-                else
-                {
-                    rb.bodyType = RigidbodyType2D.Dynamic;
-                }
+				if (Input.GetKey(KeyCode.W))
+				{
+					rb.bodyType = RigidbodyType2D.Kinematic;
+
+					ClimbSpeed = 20;
+				}
 			}
 		}
+
+		anim.SetBool("IsClimbing", Echelle != null && Echelle.IsPlaced);
 
 		if (!CanMove)
 			return;
 
 		if (Echelle != null)
 		{
-			
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-			    if (Echelle.IsGrabbed && canPositionEchelle)
-			    {
-				    Echelle.transform.SetParent(Place.transform);
-				    Echelle.isPlaced = true;
-			    }
-			    else
-			    {
-				    Echelle.IsGrabbed = !Echelle.IsGrabbed;
-				    if (Echelle.IsGrabbed)
-					    Echelle.transform.SetParent(transform);
-				    else
-				    {
-					    Echelle.transform.SetParent(null);
-				    }
-			    }
-
-            }
+			if (Input.GetKeyDown(KeyCode.E))
+			{
+				if (!Echelle.IsPlaced)
+				{
+					if (Echelle.IsGrabbed && canPositionEchelle)
+					{
+						Echelle.transform.SetParent(Place.transform);
+						Echelle.IsPlaced = true;
+						Echelle.IsGrabbed = false;
+					}
+					else
+					{
+						Echelle.IsGrabbed = !Echelle.IsGrabbed;
+						if (Echelle.IsGrabbed)
+							Echelle.transform.SetParent(transform);
+						else
+						{
+							Echelle.transform.SetParent(null);
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -99,7 +105,7 @@ public class JumpPlayer : MonoBehaviour
 			GetComponent<SpriteRenderer>().flipX = false;
 			ZeroRotVelocity.x = MoveSpeed;
 		}
-		if (Input.GetKey(KeyCode.Q) && CanMove)
+		if (Input.GetKey(KeyCode.A) && CanMove)
 		{
 			GetComponent<SpriteRenderer>().flipX = true;
 			ZeroRotVelocity.x = -MoveSpeed;
@@ -107,6 +113,10 @@ public class JumpPlayer : MonoBehaviour
 		if (Input.GetKey(KeyCode.LeftShift) && CanMove)
 		{
 			ZeroRotVelocity.x *= runMultiplicator;
+		}
+		if (ClimbSpeed != 0)
+		{
+			ZeroRotVelocity.y = ClimbSpeed;
 		}
 		float maxSpeed = MoveSpeed * runMultiplicator;
 		float lerpedHorizontalSpeed = (Mathf.InverseLerp(-maxSpeed, maxSpeed, ZeroRotVelocity.x) * 2) - 1;
@@ -140,7 +150,6 @@ public class JumpPlayer : MonoBehaviour
 
 	public void TakeDamage()
 	{
-		Debug.Log("Cest la muerte !");
 		CanMove = false;
 		StartCoroutine(TakeDamageRoutine());
 	}

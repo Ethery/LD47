@@ -9,6 +9,7 @@ public class UIManager : Singleton<UIManager>
 		Credits,
 		DeathScreen,
 		WinScreen,
+		NextLevel,
 		TutoPopup,
 	}
 

@@ -123,6 +123,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1059181176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4287369128884465088, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+  m_PrefabInstance: {fileID: 4287369127591258735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66618dd7444a8e041961b7518e4764d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1406517555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4993117893531573279, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+  m_PrefabInstance: {fileID: 4287369127591258735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c5f384fb314b741a3d9b09f00e6734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4287369127591258735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,6 +175,22 @@ PrefabInstance:
     - target: {fileID: 919164466429585589, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473056639796662136, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1059181176}
+    - target: {fileID: 2473056639796662136, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473056639796662136, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473056639796662136, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3646557180170900249, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
       propertyPath: m_AnchorMin.y
@@ -249,6 +287,18 @@ PrefabInstance:
     - target: {fileID: 4287369128884465119, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151715782747579194, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1406517555}
+    - target: {fileID: 5151715782747579194, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151715782747579194, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6352852678742760660, guid: 181b398d1ca0eef489befc8e2dc3063f, type: 3}
       propertyPath: m_AnchorMin.y

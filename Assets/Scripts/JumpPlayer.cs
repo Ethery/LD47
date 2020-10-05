@@ -47,7 +47,7 @@ public class JumpPlayer : MonoBehaviour
 		{
 			if (CanMove)
 			{
-				if (Input.GetKey(KeyCode.Z))
+				if (Input.GetAxis("Vertical") > 0f)
 				{
 					rb.bodyType = RigidbodyType2D.Kinematic;
 
@@ -63,7 +63,7 @@ public class JumpPlayer : MonoBehaviour
 
 		if (Echelle != null)
 		{
-			if (Input.GetKeyDown(KeyCode.E))
+			if (Input.GetAxis("Interact") > 0f)
 			{
 				if (!Echelle.IsPlaced)
 				{
@@ -90,7 +90,7 @@ public class JumpPlayer : MonoBehaviour
 
 	public void UpdateMovements()
 	{
-		if (Input.GetKeyDown(KeyCode.Space) && IsGrounded && CanMove)
+		if (Input.GetAxis("Jump") > 0f && IsGrounded && CanMove)
 		{
 			IsGrounded = false;
 			rb.AddForce(transform.up * forceSaut, ForceMode2D.Impulse);
@@ -100,17 +100,17 @@ public class JumpPlayer : MonoBehaviour
 
 		ZeroRotVelocity.x = 0;
 
-		if (Input.GetKey(KeyCode.D) && CanMove)
+		if (Input.GetAxis("Horizontal") > 0f && CanMove)
 		{
 			GetComponent<SpriteRenderer>().flipX = false;
 			ZeroRotVelocity.x = MoveSpeed;
 		}
-		if (Input.GetKey(KeyCode.Q) && CanMove)
+		if (Input.GetAxis("Horizontal") < 0f && CanMove)
 		{
 			GetComponent<SpriteRenderer>().flipX = true;
 			ZeroRotVelocity.x = -MoveSpeed;
 		}
-		if (Input.GetKey(KeyCode.LeftShift) && CanMove)
+		if (Input.GetAxis("Run") > 0f && CanMove)
 		{
 			ZeroRotVelocity.x *= runMultiplicator;
 		}
@@ -150,7 +150,6 @@ public class JumpPlayer : MonoBehaviour
 
 	public void TakeDamage()
 	{
-		Debug.Log("Cest la muerte !");
 		CanMove = false;
 		StartCoroutine(TakeDamageRoutine());
 	}

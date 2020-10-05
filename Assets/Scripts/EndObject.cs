@@ -6,7 +6,6 @@ public class EndObject : MonoBehaviour
 	{
 		if (collision.attachedRigidbody.gameObject == GameManager.Player.gameObject)
 		{
-			Debug.Log("Fin du niveau !");
 			GameManager.Player.CanMove = false;
 			if (GameManager.Instance.HasNextLevel())
 			{

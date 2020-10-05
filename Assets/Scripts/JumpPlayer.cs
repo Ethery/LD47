@@ -34,41 +34,51 @@ public class JumpPlayer : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		if (!ClimbingToLadder)
-			UpdateMovements();
-		else
+		UpdateMovements();
+        if(Echelle != null && Echelle.isPlaced)
 		{
 			if (CanMove)
 			{
-				//GRIMPER A L'ECHELLE
+                if(Input.GetKey(KeyCode.Z))
+                {
+                    rb.bodyType = RigidbodyType2D.Kinematic;
+                    Vector3 oldPosition = transform.position;
+                    oldPosition.y += 5 * Time.deltaTime;
+                    transform.position = oldPosition;
+                }
+                else
+                {
+                    rb.bodyType = RigidbodyType2D.Dynamic;
+                }
 			}
 		}
 
 		if (!CanMove)
 			return;
 
-		if (Echelle != null && Input.GetKeyDown(KeyCode.E))
+		if (Echelle != null)
 		{
-			if (Echelle.isPlaced)
-			{
-				ClimbingToLadder = !ClimbingToLadder;
-			}
+			
 
-			if (Echelle.IsGrabbed && canPositionEchelle)
-			{
-				Echelle.transform.SetParent(Place.transform);
-				Echelle.isPlaced = true;
-			}
-			else
-			{
-				Echelle.IsGrabbed = !Echelle.IsGrabbed;
-				if (Echelle.IsGrabbed)
-					Echelle.transform.SetParent(transform);
-				else
-				{
-					Echelle.transform.SetParent(null);
-				}
-			}
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+			    if (Echelle.IsGrabbed && canPositionEchelle)
+			    {
+				    Echelle.transform.SetParent(Place.transform);
+				    Echelle.isPlaced = true;
+			    }
+			    else
+			    {
+				    Echelle.IsGrabbed = !Echelle.IsGrabbed;
+				    if (Echelle.IsGrabbed)
+					    Echelle.transform.SetParent(transform);
+				    else
+				    {
+					    Echelle.transform.SetParent(null);
+				    }
+			    }
+
+            }
 		}
 	}
 

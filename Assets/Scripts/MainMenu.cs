@@ -1,12 +1,11 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenu : UIPage
 {
 	public void StartGame()
 	{
-		SceneManager.LoadScene("Level1");
+		GameManager.Instance.NextLevel();
 		UIManager.Show(UIManager.EPageType.MainMenu, false);
 		TutoPopup.Show("Your goal is to go to the teleporter on the level.\n Try go right maybe ? ");
 	}

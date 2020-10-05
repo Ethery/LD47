@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8880368882506908830}
   - component: {fileID: 932369423454365303}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8194298250311625401}
   - component: {fileID: 7646025516745986724}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301538808333992762}
   - component: {fileID: 8643981513326770645}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,6 +370,7 @@ MonoBehaviour:
   runMultiplicator: 1.5
   canPositionEchelle: 0
   Echelle: {fileID: 0}
+  CanMove: 1
 --- !u!95 &6133066308788045465
 Animator:
   serializedVersion: 3
@@ -455,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4327097236938584291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}

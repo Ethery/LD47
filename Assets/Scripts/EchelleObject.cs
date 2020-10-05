@@ -2,28 +2,42 @@
 
 public class EchelleObject : MonoBehaviour
 {
-	public GameObject Player;
-	public Vector3 offset = new Vector3(0, 0, 0);
-	public bool isPlaced = false;
-	private bool onPlayer = false;
+	public Vector3 PositionOffset = new Vector3(0, 0, 0);
+	public Vector3 RotationOffset = new Vector3(0, 0, 0);
+    public bool isPlaced = false;
+	public bool IsGrabbed = false;
 
 	private void Update()
 	{
-		if (onPlayer)
-		{
-			transform.position = Player.transform.position + offset;
-		}
-		GetComponent<Rigidbody2D>().bodyType = onPlayer ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
-	}
+        if(IsGrabbed)
+        {
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
+        }
+        transform.localScale = Vector3.one;
+    }
 
-	private void OnTriggerStay2D(Collider2D collision)
-	{
-		if (collision.attachedRigidbody.gameObject == Player.gameObject)
-		{
-			if (Input.GetKeyDown(KeyCode.E) && !GameManager.Player.canPositionEchelle)
-			{
-				onPlayer = !onPlayer;
-			}
-		}
-	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.attachedRigidbody != null && collision.attachedRigidbody.gameObject == GameManager.Player.gameObject)
+        {
+            GameManager.Player.Echelle = this;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.attachedRigidbody != null && collision.attachedRigidbody.gameObject == GameManager.Player.gameObject)
+        {
+            GameManager.Player.Echelle = this;
+        }
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.attachedRigidbody != null && collision.attachedRigidbody.gameObject == GameManager.Player.gameObject && !IsGrabbed)
+        {
+            GameManager.Player.Echelle = null;
+        }
+    }
 }

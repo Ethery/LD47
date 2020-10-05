@@ -9,11 +9,13 @@ public class JumpPlayer : MonoBehaviour
 	public float forceSaut = 5;
 	public float MoveSpeed = 5f;
 	public float runMultiplicator = 2;
-	public bool canPositionEchelle = false;
-	public GameObject Echelle;
+	public bool canPositionEchelle => Place != null;
+	public EchelleObject Echelle;
+	public PositionEchelle Place;
 
 	[HideInInspector]
 	public bool CanMove = true;
+	public bool ClimbingToLadder;
 
 	public bool IsGrounded { get; private set; }
 
@@ -31,6 +33,46 @@ public class JumpPlayer : MonoBehaviour
 
 	// Update is called once per frame
 	private void Update()
+	{
+		if (!ClimbingToLadder)
+			UpdateMovements();
+		else
+		{
+			if (CanMove)
+			{
+				//GRIMPER A L'ECHELLE
+			}
+		}
+
+		if (!CanMove)
+			return;
+
+		if (Echelle != null && Input.GetKeyDown(KeyCode.E))
+		{
+			if (Echelle.isPlaced)
+			{
+				ClimbingToLadder = !ClimbingToLadder;
+			}
+
+			if (Echelle.IsGrabbed && canPositionEchelle)
+			{
+				Echelle.transform.SetParent(Place.transform);
+				Echelle.isPlaced = true;
+			}
+			else
+			{
+				Echelle.IsGrabbed = !Echelle.IsGrabbed;
+				if (Echelle.IsGrabbed)
+					Echelle.transform.SetParent(transform);
+				else
+				{
+					Echelle.transform.SetParent(null);
+				}
+			}
+		}
+	}
+
+	public void UpdateMovements()
 	{
 		if (Input.GetKeyDown(KeyCode.Space) && IsGrounded && CanMove)
 		{
@@ -57,9 +99,10 @@ public class JumpPlayer : MonoBehaviour
 			ZeroRotVelocity.x *= runMultiplicator;
 		}
 		float maxSpeed = MoveSpeed * runMultiplicator;
-		float lerpedSpeed = (Mathf.InverseLerp(-maxSpeed, maxSpeed, ZeroRotVelocity.x) * 2) - 1;
-		anim.SetFloat("HorizontalSpeed", lerpedSpeed);
+		float lerpedHorizontalSpeed = (Mathf.InverseLerp(-maxSpeed, maxSpeed, ZeroRotVelocity.x) * 2) - 1;
+		anim.SetFloat("HorizontalSpeed", lerpedHorizontalSpeed);
 		anim.SetFloat("VerticalSpeed", ZeroRotVelocity.y);
+		anim.SetBool("IsGrounded", IsGrounded);
 		rb.velocity = transform.TransformVector(ZeroRotVelocity);
 
 		Vector3 CenterOfPlanet = Vector3.zero;
@@ -67,10 +110,6 @@ public class JumpPlayer : MonoBehaviour
 
 		transform.rotation = Quaternion.LookRotation(Vector3.forward, -downDirection);
 		Physics2D.gravity = downDirection * 9.81f;
-
-		if (canPositionEchelle && Input.GetKeyDown(KeyCode.E) && CanMove)
-		{
-		}
 	}
 
 	private void OnTriggerStay2D(Collider2D collision)

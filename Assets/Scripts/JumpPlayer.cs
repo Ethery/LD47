@@ -65,23 +65,23 @@ public class JumpPlayer : MonoBehaviour
 		{
 			if (Input.GetKeyDown(KeyCode.E))
 			{
-				if (!Echelle.IsPlaced)
+				if (Echelle.IsGrabbed && canPositionEchelle)
 				{
-					if (Echelle.IsGrabbed && canPositionEchelle)
+					Echelle.transform.SetParent(Place.transform);
+					Echelle.IsPlaced = true;
+					Echelle.IsGrabbed = false;
+				}
+				else
+				{
+					Echelle.IsGrabbed = !Echelle.IsGrabbed;
+					if (Echelle.IsGrabbed)
 					{
-						Echelle.transform.SetParent(Place.transform);
-						Echelle.IsPlaced = true;
-						Echelle.IsGrabbed = false;
+						Echelle.IsPlaced = false;
+						Echelle.transform.SetParent(transform);
 					}
 					else
 					{
-						Echelle.IsGrabbed = !Echelle.IsGrabbed;
-						if (Echelle.IsGrabbed)
-							Echelle.transform.SetParent(transform);
-						else
-						{
-							Echelle.transform.SetParent(null);
-						}
+						Echelle.transform.SetParent(null);
 					}
 				}
 			}

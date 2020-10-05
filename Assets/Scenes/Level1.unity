@@ -275,7 +275,7 @@ MonoBehaviour:
   m_text: Run with shift and jump with space
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
-  m_sharedMaterial: {fileID: 2465231594667646511, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
+  m_sharedMaterial: {fileID: -5544818413353537932, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_text: This is the teleporter, jump into to escape
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
-  m_sharedMaterial: {fileID: 2465231594667646511, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
+  m_sharedMaterial: {fileID: -5544818413353537932, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -824,23 +824,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ba30540ecf71d459673e3a2000a529, type: 3}
---- !u!1 &1268841745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5828988993436795090, guid: 57ba30540ecf71d459673e3a2000a529, type: 3}
-  m_PrefabInstance: {fileID: 1268841744}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1268841746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268841745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3796d5aca142f5549801630b97dc6adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1887405438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +985,7 @@ MonoBehaviour:
   m_text: 'You can move with A and D '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
-  m_sharedMaterial: {fileID: 2465231594667646511, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
+  m_sharedMaterial: {fileID: -5544818413353537932, guid: ea6b1f9f228579e46b7d4d1537943190, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

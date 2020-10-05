@@ -2,10 +2,13 @@
 
 public class EndObject : MonoBehaviour
 {
+	public AudioSource win;
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.attachedRigidbody.gameObject == GameManager.Player.gameObject)
 		{
+			win.Play();
 			GameManager.Player.CanMove = false;
 			if (GameManager.Instance.HasNextLevel())
 			{

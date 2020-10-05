@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7646323638826602391}
   - component: {fileID: 1615483464246746876}
   - component: {fileID: 228497838}
-  - component: {fileID: 679911389}
+  - component: {fileID: 5807758928428002310}
   m_Layer: 0
   m_Name: End
   m_TagString: End
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f05bb7119cbdb444bd60f5db8e2c076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &679911389
+--- !u!50 &5807758928428002310
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -143,4 +143,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7

@@ -47,7 +47,7 @@ public class JumpPlayer : MonoBehaviour
 		{
 			if (CanMove)
 			{
-				if (Input.GetAxis("Vertical") > 0f)
+				if (Input.GetKey(KeyCode.W))
 				{
 					rb.bodyType = RigidbodyType2D.Kinematic;
 
@@ -63,7 +63,7 @@ public class JumpPlayer : MonoBehaviour
 
 		if (Echelle != null)
 		{
-			if (Input.GetAxis("Interact") > 0f)
+			if (Input.GetKeyDown(KeyCode.E))
 			{
 				if (!Echelle.IsPlaced)
 				{
@@ -90,7 +90,7 @@ public class JumpPlayer : MonoBehaviour
 
 	public void UpdateMovements()
 	{
-		if (Input.GetAxis("Jump") > 0f && IsGrounded && CanMove)
+		if (Input.GetKeyDown(KeyCode.Space) && IsGrounded && CanMove)
 		{
 			IsGrounded = false;
 			rb.AddForce(transform.up * forceSaut, ForceMode2D.Impulse);
@@ -100,17 +100,17 @@ public class JumpPlayer : MonoBehaviour
 
 		ZeroRotVelocity.x = 0;
 
-		if (Input.GetAxis("Horizontal") > 0f && CanMove)
+		if (Input.GetKey(KeyCode.D) && CanMove)
 		{
 			GetComponent<SpriteRenderer>().flipX = false;
 			ZeroRotVelocity.x = MoveSpeed;
 		}
-		if (Input.GetAxis("Horizontal") < 0f && CanMove)
+		if (Input.GetKey(KeyCode.A) && CanMove)
 		{
 			GetComponent<SpriteRenderer>().flipX = true;
 			ZeroRotVelocity.x = -MoveSpeed;
 		}
-		if (Input.GetAxis("Run") > 0f && CanMove)
+		if (Input.GetKey(KeyCode.LeftShift) && CanMove)
 		{
 			ZeroRotVelocity.x *= runMultiplicator;
 		}
